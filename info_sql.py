@@ -3,21 +3,13 @@ import pymysql
 import time
 import requests
 import pyperclip
+import login_info
 from time import sleep
+li = login_info
 
-host = '74.93.130.114'
-port = 3306
-username = "sql"
-password = "@AAGoods2019"
-db_reroute = "Reroute"
-sql_login_reroute = host, port, username, password, db_reroute
-
+sql_login_reroute = li.sql_host, li.sql_port, li.sql_username, li.sql_password, li.sql_db_reroute
 # info to scrape store router
-start_url = "https://aagoods.lkdev.com/ajax_checkbook_storerouting.php?scannedval="
-end_url = "&frommachine=1"
-user_name = "aagoods"
-pass_word = "ilovemedia!"
-url = (start_url, end_url, user_name, pass_word)
+url = li.web_start_url, li.web_end_url, li.web_user_name, li.web_password
 
 
 def find_asin(barcode, sql_login=sql_login_reroute):
