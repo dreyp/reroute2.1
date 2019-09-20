@@ -5,8 +5,8 @@ import requests
 import pyperclip
 import login_info
 from time import sleep
-li = login_info
 
+li = login_info
 sql_login_reroute = li.sql_host, li.sql_port, li.sql_username, li.sql_password, li.sql_db_reroute
 # info to scrape store router
 url = li.web_start_url, li.web_end_url, li.web_user_name, li.web_password
